@@ -1,0 +1,26 @@
+import java.util.regex.*;    
+import java.util.*;    
+public class EmailValidation1{  
+    public static void main(String args[]){  
+        ArrayList<String> emails = new ArrayList<String>();  
+        emails.add("mukh18301.ec@rmkec.ac.in");  
+        emails.add("mukhil10th@gmail.com");  
+        emails.add("krameshkumar1974@gmail.com");  
+        emails.add("mukhil007@gmail.com");  
+        emails.add("sivadeiva3061@gmail.com");  
+        emails.add("muki18302.ec@rmkec.ac.in");  
+        //Add invalid emails in list  
+        emails.add("@gmail.com");  
+        emails.add("suresh786op@gmail.com");  
+        //Regular Expression   
+        String regex = "^(.+)@(.+)$";  
+        //Compile regular expression to get the pattern  
+        Pattern pattern = Pattern.compile(regex);  
+        //Iterate emails array list  
+        for(String email : emails){  
+            //Create instance of matcher   
+            Matcher matcher = pattern.matcher(email);  
+            System.out.println(email +" : "+ matcher.matches()+"\n");  
+        }  
+    }  
+}
